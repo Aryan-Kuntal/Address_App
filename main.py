@@ -26,7 +26,7 @@ def create_address(address: Address_model, db: Session = Depends(getDb)):
     return JSONResponse(status_code=status.HTTP_201_CREATED,content=jsonable_encoder(add))
 
 
-@app.get("/api/addresses/")
+@app.get("/api/addresses/filter")
 def read_addresses_within_distance(latitude: float, longitude: float, distance: float, db: Session = Depends(getDb)):
     
     
